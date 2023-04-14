@@ -2,6 +2,7 @@
 <div class="bg-gray-700 min-h-screen text-white">
     <Header />
     <SidebarVue />
+    <router-view />
 </div>
 
 </template>
