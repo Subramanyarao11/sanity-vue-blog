@@ -6,15 +6,15 @@
 					:src="CreateURL(author.avatar)"
 					class="inline-block rounded-full w-16 h-16 mr-4"  />
 
-				<h1 class="text-gray-500 text-2xl uppercase font-bold">
+				<h1 class="text-gray-400 text-2xl uppercase font-bold">
 					{{ author.full_name }}
 				</h1>
 			</div>
 
-			<p class="text-gray-500 mb-8">{{ author.short_bio }}</p>
+			<p class="text-gray-200 mb-8">{{ author.short_bio }}</p>
 
 			<div class="grid gap-4" v-if="author.posts">
-				<PostCard
+				<PostCardVue
 					v-for="(post, i) in author.posts"
 					:key="i"
 					:post="post" />
@@ -29,11 +29,12 @@ import { useRoute } from 'vue-router'
 import sanity from '../../client'
 import { CreateURL } from '../../utils'
 
-import PostCard from '../../components/PostCard'
+import PostCardVue from '../../components/PostCard.vue'
+
 
 export default {
 	components: {
-		PostCard
+		PostCardVue
 	},
 	setup () {
 		const route = useRoute()
